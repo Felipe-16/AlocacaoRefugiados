@@ -303,6 +303,7 @@
 </style>
 
 <!-- Toolbar -->
+<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
 <div class="toolbar" role="banner">
   <img
     width="40"
@@ -329,6 +330,7 @@
 
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
+
 
     <svg id="rocket" xmlns="http://www.w3.org/2000/svg" width="101.678" height="101.678" viewBox="0 0 101.678 101.678">
       <title>Rocket Ship</title>
@@ -390,9 +392,12 @@
   <h2>Adaptação</h2>
   <p>What do you want to do next with your app?</p>
 
+
+
   <input type="hidden" #selection>
 
   <div class="card-container">
+
     <button class="card card-small" (click)="selection.value = 'component'" tabindex="0">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
       <span>New Component</span>
