@@ -8,3 +8,5 @@ Projeto criado para a disciplina ECM252-Linguagens de Programação II
 - Guilherme Michehiro Okushi      R.A: 18.00848-8;
 - Juliana Gomes Haroldo           R.A: 18.00107-6;
 - Matheus Sungho Ha               R.A: 18.00525-0.
+
+Testando as mudanças
