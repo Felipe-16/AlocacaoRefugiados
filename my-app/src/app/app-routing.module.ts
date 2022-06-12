@@ -6,7 +6,7 @@ import { TransferenciaDoacaoComponent } from './transferencias-doacao/transferen
 const routes: Routes = [
   {path: '', redirectTo: 'abrigo', pathMatch: 'full'},
   {path: 'extrato-doacao', component: ExtratoDoacaoComponent},
-  {path: 'transferencia-doacao', component: TransferenciaDoacaoComponent},
+  {path: 'transferencias-doacao', component: TransferenciaDoacaoComponent},
 ];
 
 @NgModule({
