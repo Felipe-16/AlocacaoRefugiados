@@ -4,12 +4,19 @@
     --cabecalho: 22px;
     --texto: 16px;
     --subtitulo: 20px;
+    --border: 4px;
 
 }
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Roboto";
+}
+
+.container {
+    max-width: 600px;
+    padding: 30px;
+    margin: 0 auto;
   }
