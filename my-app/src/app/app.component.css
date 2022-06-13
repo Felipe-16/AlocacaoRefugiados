@@ -1,6 +1,5 @@
 body {
     margin: 0px;
-    display: flex;
 }
 
 header {
@@ -15,9 +14,15 @@ header {
 
 a{
     color: White;
-    font-size: var(--cabecalho);
     font-weight: bold;
     text-decoration: none;
+    text-transform: uppercase;
+    padding-right: 10px;
+    transition: 0.5s;
+}
+a:hover {
+    background-color: rgba(187, 240, 147, 0.504);
+    border-radius: var(--border);
 }
 
 main {
