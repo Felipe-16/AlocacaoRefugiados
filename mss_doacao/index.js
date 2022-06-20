@@ -5,17 +5,24 @@ const doacao = {}
 contador = 0
 const mongoose = require ('mongoose')
 
-
+//DB Variables
+// const {
+//   MONGODB_USER,
+//   MONGODB_PASSWORD,
+//   MONGODB_CLUSTER,
+//   MONGODB_HOST,
+//   MONGODB_DATABASE
+// } = process.env
 
 
 //DB Connection
-mongoose.connect('mongodb+srv://ecm-252-semestre1:12345@forget.d3691lf.mongodb.net/Projeto-ecm252?retryWrites=true&w=majority'
+mongoose.connect('mongodb+srv://ecm-252-semestre1:12345@forget.d3691lf.mongodb.net/Projeto-ecm252?retryWrites=true&w=majority')
 .then(() => {
   console.log("Conexão OK")
 })
 .catch((e) => {
   console.log("Conexão NOK: " + e)
-}));
+});
 
 
 
