@@ -15,7 +15,7 @@ const mongoose = require ('mongoose')
 // } = process.env
 
 
-//DB Connection
+//DB Connection - Unsafe
 mongoose.connect('mongodb+srv://ecm-252-semestre1:12345@forget.d3691lf.mongodb.net/Projeto-ecm252?retryWrites=true&w=majority')
 .then(() => {
   console.log("Conexão OK")
@@ -47,9 +47,9 @@ app.post('/doacao', (req, res) => {
 
 mongoose.connection.once('open', ()=>{
   console.log('Connected to MongoDB');
-  app.listen(PORT, ()=> console.log('Server on ${PORT} '));
-})
+  app.listen(PORT, ()=> console.log('Server on ${PORT} '))
+});
 
 app.listen(4200, () => {
-    console.log("Lembretes. Porta 4200.")
+    console.log("Lembretes. Porta 4200")
 })
