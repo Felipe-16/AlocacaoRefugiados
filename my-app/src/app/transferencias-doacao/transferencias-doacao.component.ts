@@ -8,16 +8,24 @@ import { DoacaoService } from '../services/doacao.service';
   styleUrls: ['./transferencias-doacao.component.css'],
 })
 export class TransferenciaDoacaoComponent {
-  @Output() aoDoar = new EventEmitter<any>();
+  @Output()
+  aoDoar = new EventEmitter();
 
   valor: number;
+  opcao : string;
 
   constructor(private service: DoacaoService, private router: Router) { }
 
   doar() {
+
     console.log('Doação feita com sucesso');
-    const valorDoacao = { valor: this.valor };
+    const valorDoacao = {
+      valor: this.valor,
+      opcao : this.opcao
+    };
+
     this.aoDoar.emit(valorDoacao);
+
 
     this.service.adicionar(valorDoacao).subscribe((resultado) => {
       console.log(resultado);
