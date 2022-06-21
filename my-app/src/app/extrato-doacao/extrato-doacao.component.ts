@@ -8,11 +8,15 @@ import { DoacaoService } from '../services/doacao.service';
 })
 export class ExtratoDoacaoComponent {
   @Input()
+  transf = []
   doacoes: any[];
+
 
   constructor(private service: DoacaoService) {}
 
   ngOnInit(): void {
     this.service.lista().subscribe((x) => (this.doacoes = x));
   }
+
+
 }

@@ -44,7 +44,7 @@ app.post('/doacao', (req, res) => {
     res.status(201).send(doacao[contador])
 })
 
-
+//Listen when connected
 mongoose.connection.once('open', ()=>{
   console.log('Connected to MongoDB');
   app.listen(PORT, ()=> console.log('Server on ${PORT} '))
