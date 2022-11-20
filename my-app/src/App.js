@@ -1,26 +1,26 @@
-import './App.css';
-import Transferencias from './app/Transferencias/Transferencias';
+import './index.css';
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes as Routes } from 'react-router-dom'
+import Transferencias from './pages/Transferencias/Transferencias';
+import Extrato from './pages/Extrato/Extrato';
+import Cabecalho from './components/cabecalho/Cabecalho';
+import Pagina404 from './pages/Pagina404/Pagina404';
+
+
 
 function App() {
   return (
-    <section>
-      <header>
-        <a routerLink='home'>Sobre nós</a>
-        <div>
-          <a routerLink='abrigo' >Abrigos</a>
-          <a routerLink='transferencias-doacao'>Transferências</a>
-          <a routerLink='extrato-doacao'>Doações</a>
-        </div>
+    <Router>
+      <Cabecalho/>
+      <Routes>
+        <Route path='/' element={<Transferencias />} />
+        <Route path = '*' element={<Pagina404 />} />
+        <Route path = '/extrato' element={<Extrato />} />
+      </Routes>
+    </Router>
+    
+    
 
-      </header>
-      <main>
-        <router-outlet></router-outlet>
-      </main>
-
-      <Transferencias/>
-
-
-    </section>
   );
 }
 
