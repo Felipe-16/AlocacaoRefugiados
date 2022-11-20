@@ -5,21 +5,21 @@ import { ReactDOM } from "react";
 class Transferencias extends Component {
     render() {
         return (
-            <form class="formulario" >
-                <h2 class="formulario__titulo">Fazer uma nova doação</h2>
+            <form className="formulario" >
+                <h2 className="formulario__titulo">Fazer uma nova doação</h2>
 
-                <div class="form-field">
-                    <label class="form-field__label" for="valor">Valor</label>
-                    <input class="form-field__input" id="valor" type="number" name="valor" required />
+                <div className="form-field">
+                    <label className="form-field__label" for="valor">Valor</label>
+                    <input className="form-field__input" id="valor" type="number" name="valor" required />
                 </div>
 
-                <div class="form-field" >
+                <div className="form-field" >
                     <legend>Destino de doação</legend>
                     <select required id="opcao_abrigo" type="string" name="opcao" >
                         <option selected disabled value="">Selecione</option>
-                        <option class="input-option" >Abrigo 1</option>
-                        <option class="input-option" >Abrigo 2</option>
-                        <option class="input-option" >Abrigo 3</option>
+                        <option className="input-option" >Abrigo 1</option>
+                        <option className="input-option" >Abrigo 2</option>
+                        <option className="input-option" >Abrigo 3</option>
                     </select>
                 </div>
 
@@ -27,8 +27,8 @@ class Transferencias extends Component {
                     <p><strong>Fazer uma doação pode ajudar familias desabrigadas pela guerra!</strong></p>
                 </div>
 
-                <div class="botao-wrapper">
-                    <button class="botao" type="submit">
+                <div className="botao-wrapper">
+                    <button className="botao" type="submit">
                         Doar
                     </button>
                 </div>

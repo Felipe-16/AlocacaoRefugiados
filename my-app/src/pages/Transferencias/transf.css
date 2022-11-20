@@ -1,14 +1,15 @@
+
 .formulario {
     background-color: white;
     padding: 16px;
-    border-radius: 4px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    border-radius: var(--border);
+    box-shadow: var(--box-shadow) rgba(0, 0, 0, 0.5);
 }
 
 .formulario-titulo {
     text-transform: capitalize;
-    color: black;
-    font-size: 20px;
+    color: var(--primary);
+    font-size: var(--subtitulo);
 }
 
 .form-field {
@@ -17,18 +18,18 @@
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-    color: black;
+    color: var(--primary);
 }
 
 .form-field__label, legend {
     color: inherit;
     margin-bottom: 4px;
-    font-size: 16px;
+    font-size: var(--texto);
 }
 
 .form-field__input, select{
     padding: 8px;
-    border-radius: 4px;
+    border-radius: var(--border);
     color: inherit;
     border: 2px solid;
     outline: none;
@@ -36,14 +37,14 @@
 
 
 .input-option {
-    background-color: rgb(245, 241, 241);
-    font-size: 16px;
+    background-color: var(--secondary);
+    font-size: var(--texto);
 }
 
 p {
     padding-top: 8px;
     padding-bottom: 16px;
-    font-size: 20px;
+    font-size: var(--subtitulo);
     color: rgb(236, 13, 13);
 }
 
@@ -52,12 +53,12 @@ p {
 }
 
 .botao {
-    background-color: black;
+    background-color: var(--primary);
     color: white;
     display: block;
     flex: 1;
     border: none;
-    border-radius: 4px;
+    border-radius: var(--border);
     font-size: 16px;
     padding: 0.5em;
     cursor: pointer;
