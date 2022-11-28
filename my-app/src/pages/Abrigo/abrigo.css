@@ -1,0 +1,51 @@
+.abrigos {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.abrigos li {
+    display: inline-block ;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 1.5% 1.5%;
+    padding:5px 5px;
+    box-sizing:border-box ;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+
+.abrigos li:hover{
+    border-color: #c78c19;
+}
+
+/* .abrigos li:active {
+    border-color:#088c19 ;
+} */
+
+.abrigos li:hover h2 {
+    font-size: 34px;
+}
+
+
+.abrigos h2 {
+    font-size: var(--cabecalho);
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.descricao_abrigo {
+    font-size: var(--texto);
+    color: var(--primary);
+}
+
+.info_abrigo {
+    font-size: var(--texto);
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+img {
+width: 250px;
+}

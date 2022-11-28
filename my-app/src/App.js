@@ -5,6 +5,7 @@ import Transferencias from './pages/Transferencias/Transferencias';
 import Extrato from './pages/Extrato/Extrato';
 import Cabecalho from './components/cabecalho/Cabecalho';
 import Pagina404 from './pages/Pagina404/Pagina404';
+import Abrigo from './pages/Abrigo/Abrigo';
 
 
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Transferencias />} />
         <Route path = '*' element={<Pagina404 />} />
         <Route path = '/extrato' element={<Extrato />} />
+        <Route path = '/abrigo' element={<Abrigo />} />
       </Routes>
     </Router>
     
