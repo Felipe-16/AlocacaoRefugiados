@@ -5,47 +5,67 @@
 }
 
 .abrigos li {
-    display: inline-block ;
-    text-align: center;
+    display: inline-block;
     width: 30%;
     vertical-align: top;
     margin: 1.5% 1.5%;
-    padding:5px 5px;
     box-sizing:border-box ;
-    border: 2px solid #000000;
-    border-radius: 10px;
+    /* border: 1.5px solid #000000; */
+    box-shadow: 0px 2px 23px #26395338;
+    border-radius: 5px;
 }
 
-.abrigos li:hover{
+.titulo-li {
+    vertical-align: middle;
+    padding: 10px;
+    font-weight: lighter;
+    
+}
+
+.media {
+    background: url("https://www.educolorir.com/foto-campo-de-refugiados-paquist-o-dl28908.jpg")center/cover;
+    height: 120px;
+    width: auto;
+}
+
+.texto-descricao {
+    padding: 10px;
+}
+
+/* .abrigos li:hover{
     border-color: #c78c19;
 }
 
-/* .abrigos li:active {
+.abrigos li:active {
     border-color:#088c19 ;
 } */
 
-.abrigos li:hover h2 {
+/* .abrigos li:hover h2 {
     font-size: 34px;
-}
+} */
 
 
-.abrigos h2 {
+/* .abrigos h2 {
     font-size: var(--cabecalho);
     color: var(--primary);
     font-weight: bold;
-}
+} */
 
 .descricao_abrigo {
-    font-size: var(--texto);
+    font-size: var(--descricao);
     color: var(--primary);
+    margin-bottom: 10px;
 }
 
-.info_abrigo {
-    font-size: var(--texto);
+.doar-link {
+    font-size: 14px;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 15px 0 0px 0;
+    color: red;
+    text-decoration:  red;
+    text-decoration: underline red;
 }
 
-img {
-width: 250px;
-}
+/* p {
+    color: red;
+} */
