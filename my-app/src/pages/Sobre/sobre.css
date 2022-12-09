@@ -1,0 +1,38 @@
+.main-sobre {
+    text-align: center;
+}
+
+.imagem-banner img{
+    width:100%;
+    height: 300px;
+    
+}
+
+.titulo-sobre {
+    margin: 20px;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+.texto-sobre {
+    font-size: var(--subtitulo);
+}
+
+.opcoes {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.opcoes li {
+    display: inline-block ;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 1.5% 1.5%;
+    padding:5px 5px;
+}
+
+.img-opcao {
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
