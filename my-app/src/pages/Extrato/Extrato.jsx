@@ -9,15 +9,15 @@ class Extrato extends Component {
                 <h2 className="titulo">Doações</h2>
                 <table className="tabela">
                     <thead className="tabela__cabecalho">
-                        <th className="tabela__cabecalho__conteudo">Data</th>
+                        <th className="tabela__cabecalho__conteudo">Abrigo</th>
                         <th className="tabela__cabecalho__conteudo">Valor</th>
                     </thead>
                     <tbody>
                         <tr className="tabela__linha">
                             <td className="tabela__conteudo">
-                                aa
+                                Abrigo 1
                             </td>
-                            <td className="tabela__conteudo" >aa</td>
+                            <td className="tabela__conteudo" >500,00</td>
                         </tr>
                     </tbody>
                 </table>
