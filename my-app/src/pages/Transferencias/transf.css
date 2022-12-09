@@ -33,6 +33,7 @@
     color: inherit;
     border: 2px solid;
     outline: none;
+    margin-bottom: 15px;
 }
 
 
@@ -41,7 +42,7 @@
     font-size: var(--texto);
 }
 
-p {
+.frase {
     padding-top: 8px;
     padding-bottom: 16px;
     font-size: var(--subtitulo);

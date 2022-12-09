@@ -9,6 +9,12 @@ class Transferencias extends Component {
                 <h2 className="formulario__titulo">Fazer uma nova doação</h2>
 
                 <div className="form-field">
+                    <label className="form-field__label" for="nome">Nome Completo</label>
+                    <input className="form-field__input" id="nome" type="text" name="nome" required />
+
+                    <label className="form-field__label" for="doc">Documento</label>
+                    <input className="form-field__input" id="doc" type="text" name="doc" required />
+
                     <label className="form-field__label" for="valor">Valor</label>
                     <input className="form-field__input" id="valor" type="number" name="valor" required />
                 </div>
@@ -24,7 +30,7 @@ class Transferencias extends Component {
                 </div>
 
                 <div>
-                    <p><strong>Fazer uma doação pode ajudar familias desabrigadas pela guerra!</strong></p>
+                    <p className="frase"><strong>Fazer uma doação pode ajudar familias desabrigadas pela guerra!</strong></p>
                 </div>
 
                 <div className="botao-wrapper">
