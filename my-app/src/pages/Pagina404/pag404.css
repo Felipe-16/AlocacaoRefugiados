@@ -1,0 +1,28 @@
+
+.error {
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.msg-error {
+    text-align: center;
+    padding: 20px;
+    color: red;
+}
+
+.container-botao {
+    background-color: black;
+    width:fit-content;
+    height: fit-content;
+    border-radius: var(--border);
+    position:absolute;
+    left: 40%;
+}
+
+.voltar {
+    font-size: var(--subtitulo);
+    display:block;
+    padding: 5px;
+
+}
