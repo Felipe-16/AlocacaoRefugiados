@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const Realocacao = new mongoose.Schema({
-    doador: {
+    nome: {
         type: String, 
         required: true,
     },
@@ -9,14 +9,14 @@ const Realocacao = new mongoose.Schema({
         type: String, 
         required: true,
     },
-    valor: { 
+    dataNascimento: { 
         type: Number, 
         required: true,
     },
-    beneficiario: { 
+    pais: { 
         type: String, 
         required: true,
     },
 });
 
-export default mongoose.model("Doacao", Doacao);
+export default mongoose.model("Realocacao", Realocacao);

@@ -19,6 +19,3 @@ app.use(express.json());
 
 //Barramento de eventos
 app.use(routes);
-
-
-//mongodb+srv://root:root@apicluster.dud9qod.mongodb.net/projlp?retryWrites=true&w=majority

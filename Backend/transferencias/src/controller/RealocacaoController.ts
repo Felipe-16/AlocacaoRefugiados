@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import Doacao from "../database/Schemas/Doacao";
+import Realocacao from "../database/Schemas/Realocacao";
 
-class DoacaoController {
+class RealocacaoController {
    async find(request:Request, response: Response){
         try {
-            const doacoes = await Doacao.find();
-            return response.json(doacoes);
+            const realocacoes = await Realocacao.find();
+            return response.json(realocacoes);
         } catch (error) {
             return response.status(500).send({
                 error: "Erro em resgatar dados do MongoDB...",
@@ -14,17 +14,17 @@ class DoacaoController {
         }
    }
    async create(request:Request, response: Response) {
-        const {doador, rg, valor, beneficiario} = request.body
+        const {nome, rg, dataNascimento, pais} = request.body
         try {
 
-            const doacao = await Doacao.create({
-                doador,
+            const realocacao = await Realocacao.create({
+                nome,
                 rg,
-                valor,
-                beneficiario
+                dataNascimento,
+                pais
             });
 
-            return response.json(doacao);
+            return response.json(realocacao);
         } catch (error) {
             return response.status(500).send({
                 error: "Erro de registro...",
@@ -34,4 +34,4 @@ class DoacaoController {
    }
 }
 
-export default new DoacaoController();
+export default new RealocacaoController();
