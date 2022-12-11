@@ -7,12 +7,12 @@ import styled from 'styled-components'
 const Cabecalho = () => {
     return (
         <Header>
-            <Opcoes><Link to='/'>Sobre nós</Link></Opcoes>
+            <Opcoes href='/'>Sobre nós</Opcoes>
             <div>
-                <Opcoes><Link to ='/abrigo'>Abrigos</Link></Opcoes>
-                <Opcoes><Link to ='/realocacao'>Realocação</Link></Opcoes>
-                <Opcoes><Link to = '/transferencia'>Transferências</Link></Opcoes>
-                <Opcoes><Link to = '/extrato'>Doações</Link></Opcoes>
+                <Opcoes href='/abrigo'>Abrigos</Opcoes>
+                <Opcoes href='/realocacao'>Realocação</Opcoes>
+                <Opcoes href='transferencia'>Transferências</Opcoes>
+                <Opcoes href='extrato'>Doações</Opcoes>
             </div>
 
         </Header>
@@ -34,11 +34,10 @@ const Header = styled.header`
     margin-top: 0px;
 `
 const Opcoes = styled.a`
-    a {
-        color: White;
-        font-weight: bold;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding-right: 10px;
-    }
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-right: 10px;
+    color: White;
+
 `
