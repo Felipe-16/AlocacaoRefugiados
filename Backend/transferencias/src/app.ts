@@ -4,7 +4,6 @@ import routes from './routes';
 
 const app = express();
 
-
 //Criar/conectar em um banco
 mongoose.connect('mongodb+srv://root:root@apicluster.dud9qod.mongodb.net/projlp?retryWrites=true&w=majority')
 .then(() => {
@@ -18,8 +17,5 @@ mongoose.connect('mongodb+srv://root:root@apicluster.dud9qod.mongodb.net/projlp?
 //Express enxergar o request em json
 app.use(express.json());
 
-//Utilizar o modulo de routes
+//Barramento de eventos
 app.use(routes);
-
-
-//mongodb+srv://root:root@apicluster.dud9qod.mongodb.net/projlp?retryWrites=true&w=majority
