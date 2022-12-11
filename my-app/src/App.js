@@ -1,4 +1,3 @@
-import './index.css';
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes as Routes } from 'react-router-dom'
 import Transferencias from './pages/Transferencias/Transferencias';
