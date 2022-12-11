@@ -8,8 +8,8 @@ class Extrato extends Component {
                 <Titulo className="titulo">Doações</Titulo>
                 <Tabela className="tabela">
                     <TabelaCabecalho className="tabela__cabecalho">
-                        <ConteudoCabecalho className="tabela__cabecalho__conteudo">Abrigo</ConteudoCabecalho>
-                        <ConteudoCabecalho className="tabela__cabecalho__conteudo">Valor</ConteudoCabecalho>
+                        <ConteudoCabecalho>Abrigo</ConteudoCabecalho>
+                        <ConteudoCabecalho>Valor</ConteudoCabecalho>
                     </TabelaCabecalho>
                     <tbody>
                         <Campos>
@@ -50,7 +50,7 @@ const Tabela = styled.table`
     box-shadow: var(--box-shadow) rgba(0, 0, 0, 0.5);
 `
 
-const TabelaCabecalho = styled.thead`
+const TabelaCabecalho = styled.tbody`
     color: var(--primary);
 `
 const ConteudoCabecalho = styled.th`
