@@ -8,16 +8,16 @@ class Realocacao extends Component {
                 <Titulo>Adicionar um Refugiado</Titulo>
 
                 <Campo>
-                    <Etiqueta for="nome">Nome Completo</Etiqueta>
+                    <Etiqueta htmlFor="nome">Nome Completo</Etiqueta>
                     <Input id="nome" type="text" name="nome" required />
-                    <Etiqueta for="documento">Documento</Etiqueta>
+                    <Etiqueta htmlFor="documento">Documento</Etiqueta>
                     <Input id="documento" type="text" name="documento" required />
                 </Campo>
 
                 <Campo>
                     <Legend>Destino de Alocação</Legend>
                     <Seletor required id="opcao_abrigo" type="string" name="opcao" >
-                        <Opcoes selected disabled value="">Selecione</Opcoes>
+                        <Opcoes value="" disabled={this.props.defaultDisabled}>Selecione</Opcoes>
                         <Opcoes>Abrigo 1</Opcoes>
                         <Opcoes>Abrigo 2</Opcoes>
                         <Opcoes>Abrigo 3</Opcoes>
