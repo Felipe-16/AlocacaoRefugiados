@@ -1,26 +1,38 @@
 import React, { Component } from "react";
 import styled from 'styled-components'
+import { useForm } from 'react-hook-form'
+import { useHistory } from 'react-router-dom'
 
-class Realocacao extends Component {
-    render() {
+
+function Realocacao () {
+
+    // let history = useHistory()
+
+    const { register, handleSubmit} = useForm();
+    const criarRealocacao = data => console.log(data)
+    // function navigateToHome() {
+    //     history.push("/");
+    //   }
+
+
         return (
-            <Formulario>
+            <Formulario onSubmit={handleSubmit(criarRealocacao)}>
                 <Titulo>Adicionar um Refugiado</Titulo>
 
                 <Campo>
                     <Etiqueta htmlFor="nome">Nome Completo</Etiqueta>
-                    <Input id="nome" type="text" name="nome" required />
+                    <Input id="nome" type="text" name="nome" required {...register("nome")} />
                     <Etiqueta htmlFor="documento">Documento</Etiqueta>
-                    <Input id="documento" type="text" name="documento" required />
+                    <Input id="documento" type="text" name="doc" required {...register("doc")}/>
                 </Campo>
 
                 <Campo>
                     <Legend>Destino de Alocação</Legend>
-                    <Seletor required id="opcao_abrigo" type="string" name="opcao" >
-                        <Opcoes value="" disabled={this.props.defaultDisabled}>Selecione</Opcoes>
-                        <Opcoes>Abrigo 1</Opcoes>
-                        <Opcoes>Abrigo 2</Opcoes>
-                        <Opcoes>Abrigo 3</Opcoes>
+                    <Seletor required id="opcao_abrigo" type="string" name="opcao" {...register("opcao")}>
+                        <Opcoes defaultValue ="Selecione" {...register("selecione", {disabled: true})}  >Selecione</Opcoes>
+                        <Opcoes value="Abrigo 1">Abrigo 1</Opcoes>
+                        <Opcoes value="Abrigo 2">Abrigo 2</Opcoes>
+                        <Opcoes value = "Abrigo 3">Abrigo 3</Opcoes>
                     </Seletor>
                 </Campo>
 
@@ -36,9 +48,8 @@ class Realocacao extends Component {
         )
     }
 
-}
 
-export default Realocacao;
+export default Realocacao
 
 
 const Formulario = styled.form`

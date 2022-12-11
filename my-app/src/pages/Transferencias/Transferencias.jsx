@@ -1,52 +1,57 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from 'styled-components'
-
-class Transferencias extends Component {
-    render() {
-        return (
-            <Formulario >
-                <Titulo >Fazer uma nova doação</Titulo>
-
-                <Campo>
-                    <Etiqueta className="form-field__label" for="nome">Nome Completo</Etiqueta>
-                    <Input className="form-field__input" id="nome" type="text" name="nome" required />
-
-                    <Etiqueta className="form-field__label" for="doc">Documento</Etiqueta>
-                    <Input className="form-field__input" id="doc" type="text" name="doc" required />
-
-                    <Etiqueta className="form-field__label" for="valor">Valor</Etiqueta>
-                    <Input className="form-field__input" id="valor" type="number" name="valor" required />
-                </Campo>
-
-                <Campo>
-                    <Legend>Destino de doação</Legend>
-                    <Seletor required id="opcao_abrigo" type="string" name="opcao" >
-                        <Opcoes selected disabled value="">Selecione</Opcoes>
-                        <Opcoes>Abrigo 1</Opcoes>
-                        <Opcoes>Abrigo 2</Opcoes>
-                        <Opcoes>Abrigo 3</Opcoes>
-                    </Seletor>
-                </Campo>
-
-                <div>
-                    <Frase className="frase"><strong>Fazer uma doação pode ajudar familias desabrigadas pela guerra!</strong></Frase>
-                </div>
-
-                <BotaoWrapper>
-                    <Botao type="submit">
-                        Doar
-                    </Botao>
-                </BotaoWrapper>
-
-            </Formulario>
+// import { useHistory } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 
 
-        )
-    }
+function Transferencias() {
 
+    const { register, handleSubmit} = useForm();
+    const criarTransferencia = data => console.log(data);
+
+    return (
+        <Formulario onSubmit={handleSubmit(criarTransferencia)} >
+            <Titulo >Fazer uma nova doação</Titulo>
+
+            <Campo>
+                <Etiqueta htmlFor="nome">Nome Completo</Etiqueta>
+                <Input id="nome" type="text" name="nome" required {...register("nome")}/>
+
+                <Etiqueta htmlFor="doc">Documento</Etiqueta>
+                <Input id="doc" type="text" name="doc" required {...register("doc")}/>
+
+                <Etiqueta htmlFor="valor">Valor</Etiqueta>
+                <Input id="valor" type="number" name="valor" required {...register("valor")}/>
+            </Campo>
+
+            <Campo>
+                <Legend>Destino de doação</Legend>
+                <Seletor id="opcao_abrigo" type="string" name="opcao" {...register("opcao")}>
+                    {/* <Opcoes value="" disabled={this.props.defaultDisabled}>Selecione</Opcoes> */}
+                    <Opcoes value="Abrigo 1">Abrigo 1</Opcoes>
+                    <Opcoes value="Abrigo 2">Abrigo 2</Opcoes>
+                    <Opcoes value="Abrigo 3">Abrigo 3</Opcoes>
+                </Seletor>
+            </Campo>
+
+            <div>
+                <Frase className="frase"><strong>Fazer uma doação pode ajudar familias desabrigadas pela guerra!</strong></Frase>
+            </div>
+
+            <BotaoWrapper>
+                <Botao type="submit">
+                    Doar
+                </Botao>
+            </BotaoWrapper>
+
+        </Formulario>
+
+
+    )
 }
 
-export default Transferencias;
+
+export default Transferencias
 
 
 const Formulario = styled.form`
@@ -107,7 +112,7 @@ const Opcoes = styled.option`
 
 const BotaoWrapper = styled.div`
     display: flex;
-` 
+`
 
 const Botao = styled.button`
     background-color: var(--primary);
