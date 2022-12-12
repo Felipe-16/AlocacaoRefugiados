@@ -1,34 +1,54 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components'
+import axios from 'axios'
 
-class Extrato extends Component {
-    render() {
-        return (
-            <Container>
-                <Titulo className="titulo">Doações</Titulo>
-                <Tabela className="tabela">
-                    <TabelaCabecalho className="tabela__cabecalho">
-                        <ConteudoCabecalho>Abrigo</ConteudoCabecalho>
-                        <ConteudoCabecalho>Valor</ConteudoCabecalho>
-                    </TabelaCabecalho>
-                    <tbody>
-                        <Campos>
-                            <ConteudoCampo className="tabela__conteudo">
-                                Abrigo 1
-                            </ConteudoCampo>
-                            <ConteudoCampo className="tabela__conteudo" >500,00</ConteudoCampo>
-                        </Campos>
-                    </tbody>
-                </Tabela>
-            </Container >
+function Extrato() {
+
+    const [doacoes, setDoacoes] = useState([])
+
+    useEffect(() => {
+        axios.get("http://localhost:5000/doacoes")
+            .then(((response) => {
+                setDoacoes(response.data)
+            }))
+            .catch(() => {
+                console.log('deu errado')
+            })
+    }, [])
+
+    return (
+        <Container>
+            <Titulo className="titulo">Doações</Titulo>
+            <Tabela className="tabela">
+                <TabelaCabecalho className="tabela__cabecalho">
+                    <ConteudoCabecalho>Abrigo</ConteudoCabecalho>
+                    <ConteudoCabecalho>Valor</ConteudoCabecalho>
+                </TabelaCabecalho>
+                <tbody>
+                    <Campos>
+                        {doacoes.map((doacao, key) => {
+                            return (
+                                <ConteudoCampo className="tabela__conteudo">
+                                    {doacao.opcao}
+                                </ConteudoCampo>
+                            )
+                        })}
+                        {doacoes.map((doacao, key) => {
+                            return (
+                                <ConteudoCampo className="tabela__conteudo" >{doacao.valor}</ConteudoCampo>
+                            )
+                        })}
+                    </Campos>
+                </tbody>
+            </Tabela>
+        </Container >
 
 
-        )
-    }
-
+    )
 }
 
-export default Extrato;
+
+export default Extrato
 
 
 const Container = styled.section`
@@ -50,7 +70,7 @@ const Tabela = styled.table`
     box-shadow: var(--box-shadow) rgba(0, 0, 0, 0.5);
 `
 
-const TabelaCabecalho = styled.tbody`
+const TabelaCabecalho = styled.thead`
     color: var(--primary);
 `
 const ConteudoCabecalho = styled.th`
@@ -64,4 +84,5 @@ const Campos = styled.tr`
 `
 const ConteudoCampo = styled.td`
     padding: 10px;
+
 `
