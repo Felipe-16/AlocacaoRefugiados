@@ -1,0 +1,17 @@
+apiVersion: app/v1
+kind: Deployment
+metadata:
+  name: trasferencia-api
+spec:
+  selector:
+    matchLabels:
+      app: transferencia-api
+  template:
+    metadata:
+      labels:
+        app: tranferencia-api
+    spec:
+      containers:
+      - name: transferencia-api
+        image: hash-api
+        imagePullPolicy: IfNotPresent

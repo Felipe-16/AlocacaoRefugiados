@@ -1,15 +1,16 @@
 import { Router } from "express";
 import DoacaoController from "./controller/DoacaoController";
-import RealocacaoController from "./controller/RealocacaoController";
+import axios from 'axios';
 
 const routes = Router();
 
 //Rotas para GET e POST de doação
-routes.get("/donations", DoacaoController.find);
-routes.post("/donate", DoacaoController.create);
-
-//Rotas para GET e POST de realocação
-routes.get("/relocations", RealocacaoController.find);
-routes.post("/relocate", RealocacaoController.create);
+routes.get('/donate', (req, res) => {
+    res.send(DoacaoController.find)
+})
+routes.post('/donate', async (req, res) => {
+    await axios.post("http://localhost:10000/eventos", DoacaoController.create);
+    res.status(201).send(DoacaoController.create)
+})
 
 export default routes;
