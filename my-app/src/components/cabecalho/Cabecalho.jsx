@@ -1,21 +1,42 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import './cabecalho.css'
+import styled from 'styled-components'
+
+
 
 const Cabecalho = () => {
     return (
-        <header>
-            <a><Link to='#'>Sobre nós</Link></a>
+        <Header>
+            <Opcoes href='/'>Sobre nós</Opcoes>
             <div>
-                <a><Link to ='/abrigo'>Abrigos</Link></a>
-                <a><Link to = '/'>Transferências</Link></a>
-                <a><Link to = '/extrato'>Doações</Link></a>
+                <Opcoes href='/abrigo'>Abrigos</Opcoes>
+                <Opcoes href='/realocacao'>Realocação</Opcoes>
+                <Opcoes href='transferencia'>Transferências</Opcoes>
+                <Opcoes href='extrato'>Doações</Opcoes>
             </div>
 
-        </header>
+        </Header>
 
     )
 }
 
 
 export default Cabecalho
+
+
+const Header = styled.header`
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary);
+    text-align: center;
+    margin-top: 0px;
+`
+const Opcoes = styled.a`
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-right: 10px;
+    color: White;
+
+`

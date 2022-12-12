@@ -1,56 +1,48 @@
 import React from "react";
 import styled from 'styled-components'
-// import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 
+function Realocacao() {
 
-function Transferencias() {
+    const { register, handleSubmit } = useForm();
 
-    const { register, handleSubmit} = useForm();
 
-    const criarTransferencia = data => axios.post("http://localhost:5000/doacoes", data)
-    .then(() => {
-        console.log("deu certo")
+    const criarRealocacao = data => axios.post("http://localhost:6000/realocacao", data)
+        .then(() => {
+            console.log("deu certo")
+            console.log(data)
 
-    })
-    .catch(() => {
-        console.log("deu errado")
+        })
+        .catch(() => {
+            console.log("deu errado")
 
-    })
+        })
 
     return (
-        <Formulario onSubmit={handleSubmit(criarTransferencia)} >
-            <Titulo >Fazer uma nova doação</Titulo>
+        <Formulario onSubmit={handleSubmit(criarRealocacao)}>
+            <Titulo>Adicionar um Refugiado</Titulo>
 
             <Campo>
                 <Etiqueta htmlFor="nome">Nome Completo</Etiqueta>
-                <Input id="nome" type="text" name="nome" required {...register("nome")}/>
-
-                <Etiqueta htmlFor="doc">Documento</Etiqueta>
-                <Input id="doc" type="text" name="doc" required {...register("doc")}/>
-
-                <Etiqueta htmlFor="valor">Valor</Etiqueta>
-                <Input id="valor" type="number" name="valor" required {...register("valor")}/>
+                <Input id="nome" type="text" name="nome" required {...register("nome")} />
+                <Etiqueta htmlFor="documento">Documento</Etiqueta>
+                <Input id="documento" type="text" name="doc" required {...register("doc")} />
             </Campo>
 
             <Campo>
-                <Legend>Destino de doação</Legend>
-                <Seletor id="opcao_abrigo" type="string" name="opcao" {...register("opcao")}>
-                    {/* <Opcoes value="" disabled={this.props.defaultDisabled}>Selecione</Opcoes> */}
+                <Legend>Destino de Alocação</Legend>
+                <Seletor required id="opcao_abrigo" type="string" name="opcao" {...register("opcao")}>
+                    <Opcoes defaultValue="Selecione" {...register("selecione", { disabled: true })}  >Selecione</Opcoes>
                     <Opcoes value="Abrigo 1">Abrigo 1</Opcoes>
                     <Opcoes value="Abrigo 2">Abrigo 2</Opcoes>
                     <Opcoes value="Abrigo 3">Abrigo 3</Opcoes>
                 </Seletor>
             </Campo>
 
-            <div>
-                <Frase className="frase"><strong>Fazer uma doação pode ajudar familias desabrigadas pela guerra!</strong></Frase>
-            </div>
-
             <BotaoWrapper>
                 <Botao type="submit">
-                    Doar
+                    Admitir
                 </Botao>
             </BotaoWrapper>
 
@@ -61,7 +53,7 @@ function Transferencias() {
 }
 
 
-export default Transferencias
+export default Realocacao
 
 
 const Formulario = styled.form`
@@ -114,7 +106,6 @@ const Seletor = styled.select`
     border: 2px solid;
     outline: none;
 `
-
 const Opcoes = styled.option`
     background-color: var(--secondary);
     font-size: var(--texto);
@@ -139,11 +130,4 @@ const Botao = styled.button`
     :hover {
         opacity: 0.8;
     }
-`
-
-const Frase = styled.p`
-    padding-top: 8px;
-    padding-bottom: 16px;
-    font-size: var(--subtitulo);
-    color: rgb(236, 13, 13);
 `
