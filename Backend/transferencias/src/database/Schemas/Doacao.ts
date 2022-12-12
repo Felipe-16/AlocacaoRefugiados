@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
 const Doacao = new mongoose.Schema({
-    doador: {
+    id: {
         type: String, 
         required: true,
     },
-    rg: {
+    abrigo: {
         type: String, 
         required: true,
     },
@@ -13,8 +13,8 @@ const Doacao = new mongoose.Schema({
         type: Number, 
         required: true,
     },
-    beneficiario: { 
-        type: String, 
+    data: { 
+        type: Date, 
         required: true,
     },
 });
