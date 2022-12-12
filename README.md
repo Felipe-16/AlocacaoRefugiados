@@ -5,7 +5,8 @@ Projeto criado para a disciplina ECM252-Linguagens de Programação II
 ## Ferramentas Utilizadas:
 - React
 - Nodejs
-- Mongodb
+- Typescript
+- Mongodb Atlas
 
 ## Integrantes:
 - Daniel Branquinho Gomes         R.A: 18.02617-6; 
