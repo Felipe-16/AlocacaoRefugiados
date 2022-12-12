@@ -2,9 +2,14 @@ import React, { Component } from "react";
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
 import { useHistory } from 'react-router-dom'
-
+import axios from 'axios'
+import { useEffect } from "react";
 
 function Realocacao () {
+
+    
+
+    // const Post = api.get()
 
     // let history = useHistory()
 

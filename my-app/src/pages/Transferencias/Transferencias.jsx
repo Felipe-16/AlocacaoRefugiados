@@ -2,12 +2,22 @@ import React from "react";
 import styled from 'styled-components'
 // import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import axios from 'axios'
 
 
 function Transferencias() {
 
     const { register, handleSubmit} = useForm();
-    const criarTransferencia = data => console.log(data);
+
+    const criarTransferencia = data => axios.post("http://localhost:5000/doacoes", data)
+    .then(() => {
+        console.log("deu certo")
+
+    })
+    .catch(() => {
+        console.log("deu errado")
+
+    })
 
     return (
         <Formulario onSubmit={handleSubmit(criarTransferencia)} >
