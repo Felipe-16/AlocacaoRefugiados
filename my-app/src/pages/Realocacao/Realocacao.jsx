@@ -1,57 +1,56 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
-import { useHistory } from 'react-router-dom'
 import axios from 'axios'
-import { useEffect } from "react";
 
-function Realocacao () {
+function Realocacao() {
 
-    
-
-    // const Post = api.get()
-
-    // let history = useHistory()
-
-    const { register, handleSubmit} = useForm();
-    const criarRealocacao = data => console.log(data)
-    // function navigateToHome() {
-    //     history.push("/");
-    //   }
+    const { register, handleSubmit } = useForm();
 
 
-        return (
-            <Formulario onSubmit={handleSubmit(criarRealocacao)}>
-                <Titulo>Adicionar um Refugiado</Titulo>
+    const criarRealocacao = data => axios.post("http://localhost:6000/realocacao", data)
+        .then(() => {
+            console.log("deu certo")
+            console.log(data)
 
-                <Campo>
-                    <Etiqueta htmlFor="nome">Nome Completo</Etiqueta>
-                    <Input id="nome" type="text" name="nome" required {...register("nome")} />
-                    <Etiqueta htmlFor="documento">Documento</Etiqueta>
-                    <Input id="documento" type="text" name="doc" required {...register("doc")}/>
-                </Campo>
+        })
+        .catch(() => {
+            console.log("deu errado")
 
-                <Campo>
-                    <Legend>Destino de Alocação</Legend>
-                    <Seletor required id="opcao_abrigo" type="string" name="opcao" {...register("opcao")}>
-                        <Opcoes defaultValue ="Selecione" {...register("selecione", {disabled: true})}  >Selecione</Opcoes>
-                        <Opcoes value="Abrigo 1">Abrigo 1</Opcoes>
-                        <Opcoes value="Abrigo 2">Abrigo 2</Opcoes>
-                        <Opcoes value = "Abrigo 3">Abrigo 3</Opcoes>
-                    </Seletor>
-                </Campo>
+        })
 
-                <BotaoWrapper>
-                    <Botao type="submit">
-                        Admitir
-                    </Botao>
-                </BotaoWrapper>
+    return (
+        <Formulario onSubmit={handleSubmit(criarRealocacao)}>
+            <Titulo>Adicionar um Refugiado</Titulo>
 
-            </Formulario>
+            <Campo>
+                <Etiqueta htmlFor="nome">Nome Completo</Etiqueta>
+                <Input id="nome" type="text" name="nome" required {...register("nome")} />
+                <Etiqueta htmlFor="documento">Documento</Etiqueta>
+                <Input id="documento" type="text" name="doc" required {...register("doc")} />
+            </Campo>
+
+            <Campo>
+                <Legend>Destino de Alocação</Legend>
+                <Seletor required id="opcao_abrigo" type="string" name="opcao" {...register("opcao")}>
+                    <Opcoes defaultValue="Selecione" {...register("selecione", { disabled: true })}  >Selecione</Opcoes>
+                    <Opcoes value="Abrigo 1">Abrigo 1</Opcoes>
+                    <Opcoes value="Abrigo 2">Abrigo 2</Opcoes>
+                    <Opcoes value="Abrigo 3">Abrigo 3</Opcoes>
+                </Seletor>
+            </Campo>
+
+            <BotaoWrapper>
+                <Botao type="submit">
+                    Admitir
+                </Botao>
+            </BotaoWrapper>
+
+        </Formulario>
 
 
-        )
-    }
+    )
+}
 
 
 export default Realocacao
@@ -114,7 +113,7 @@ const Opcoes = styled.option`
 
 const BotaoWrapper = styled.div`
     display: flex;
-` 
+`
 
 const Botao = styled.button`
     background-color: var(--primary);

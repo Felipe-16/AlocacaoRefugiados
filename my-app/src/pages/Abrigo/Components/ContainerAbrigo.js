@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 
 
-function ContainerAbrigo() {
+function ContainerAbrigo({abrigo, realocadas, doacoes}) {
 
     return (
         <CaixaLi> 
-            <Titulo>Abrigo 1</Titulo>
+            <Titulo>{abrigo}</Titulo>
             <Media/>
             <CaixaTexto> 
                 <DescricaoAbrigo>Abrigo 1 fica localizado na provincia de São Paulo.</DescricaoAbrigo>
-                <DescricaoAbrigo>Já foram realocadas 10 pessoas nesse abrigo.</DescricaoAbrigo>
-                <DescricaoAbrigo>Total de doações feitas para esse abrigo: R$1500.</DescricaoAbrigo>
+                <DescricaoAbrigo>Já foram realocadas {realocadas} pessoas nesse abrigo.</DescricaoAbrigo>
+                <DescricaoAbrigo>Total de doações feitas para esse abrigo: R${doacoes}.</DescricaoAbrigo>
 
 
                 <DoacaoLInk href='/Transferencia'>Para realizar uma doação</DoacaoLInk>
