@@ -10,7 +10,6 @@ routes.get('/donate', (req, res) => {
 })
 routes.post('/donate', async (req, res) => {
     await axios.post("http://localhost:10000/eventos", DoacaoController.create);
-    res.status(201).send(DoacaoController.create)
 })
 
 export default routes;

@@ -9,7 +9,7 @@ const app = express();
 mongoose.connect('mongodb+srv://root:root@apicluster.dud9qod.mongodb.net/projlp?retryWrites=true&w=majority')
 .then(() => {
     console.log('Conectado ao banco!');
-    app.listen(4000, () =>{
+    app.listen(6000, () =>{
         console.log("Server is listening...");
     });
 })
